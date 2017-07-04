@@ -42,7 +42,7 @@ module ActionController
 				def xe_index
 					result = @xmlrpc_server.process(request.body.read) # add .read to guarantee correct source for REXML
 					puts "\n\n----- BEGIN RESULT -----\n#{result}----- END RESULT -----\n\n"
-					render :text => result, :content_type => 'text/xml'
+					render plain: result, content_type: 'text/xml'
 				end
 
 				private
